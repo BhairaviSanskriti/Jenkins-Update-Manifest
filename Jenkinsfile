@@ -6,6 +6,7 @@ pipeline {
         checkout scm
       }
      stage('Update Manifest') {
+       steps{
       script {
           catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
               withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
@@ -23,7 +24,7 @@ pipeline {
            }
         }
       }
-    
+     }
     }
     }
 }
