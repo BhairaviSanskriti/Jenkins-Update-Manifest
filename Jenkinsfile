@@ -5,6 +5,7 @@ pipeline {
       steps {
         checkout scm
       }
+    }
      stage('Update Manifest') {
        steps{
       script {
@@ -26,5 +27,5 @@ pipeline {
       }
      }
     }
-    }
+    
 }
