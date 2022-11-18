@@ -1,11 +1,11 @@
 pipeline {
+  agent any
   stages {
     stage ('Clone repo'){
       steps {
         checkout scm
       }
-    }
-    stage('Update Manifest') {
+     stage('Update Manifest') {
       script {
           catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
               withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
@@ -23,5 +23,7 @@ pipeline {
            }
         }
       }
+    
+    }
     }
 }
