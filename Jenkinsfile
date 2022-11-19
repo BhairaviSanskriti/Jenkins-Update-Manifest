@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage ('Echo build number'){
+      steps {
+        sh 'echo $BUILDNUMBER'
+      }
+    }
     stage ('Clone repo'){
       steps {
         checkout scm
