@@ -23,7 +23,7 @@ spec:
         tier: dev
     spec:
       containers:
-      - image: bhairavisanskriti/sanskriti-portfolio:34
+      - image: bhairavisanskriti/sanskriti-portfolio:35
         imagePullPolicy: IfNotPresent
         name: portfolio-webapp
         ports:
