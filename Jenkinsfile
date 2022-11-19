@@ -22,7 +22,7 @@ pipeline {
                   //sh "git switch master"
                   sh "cat deployment.yaml"
                   sh '''#!/bin/bash
-                    sed -i 's/sanskriti-portfolio.*/sanskriti-portfolio:'"${BUILDNUMBER}"'/g' deployment.yaml
+                    sed -i 's/sanskriti-portfolio:*/sanskriti-portfolio:'"${BUILDNUMBER}"'/g' deployment.yaml
                   '''
                   sh "cat deployment.yaml"
                   sh "git add ."
